@@ -1,0 +1,264 @@
+* {
+    font-family: monospace;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.heading{
+    text-align: center;
+    color: #a74caf;
+}
+
+.heading h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.heading p{
+    font-size: 20px;
+    font-weight: bold;
+    color: #4a484a;
+    font-family: monospace;
+}
+
+.form-container{
+    text-align: center;
+}
+
+input[type=text] {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    border-style: none;
+    box-shadow: 0px 0px 4px 0px #4a484a;
+}
+
+input[type=submit], button {
+    font-size: 16px;
+    background-color: #a74caf;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 100px;
+    margin: 8px 0px;
+}
+
+.content {
+    overflow: hidden;
+    display: none;
+}
+
+.active, .collapsible:hover {
+    background-color: #a74caf77;
+}
+
+.advance-search-section{
+    text-align: center;
+}
+
+.collapsible  {
+    margin: 10px 0px;
+}
+
+#budget {
+    width: 80px;
+    font-size: 13px;
+    padding: 6px 10px;
+}
+
+#advance-search-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-select {
+    appearance: none;
+    background-color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 250px;
+    border-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-select option {
+    padding: 10px;
+  }
+
+  .form-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #007bff;
+  }
+
+.printBtn {
+    text-align: center;
+}
+
+/* loading animation */
+.container {
+    visibility: hidden;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    }
+
+    .dash {
+    margin: 0 15px;
+    width: 35px;
+    height: 15px;
+    border-radius: 8px;
+    background: #FF2CBD;
+    box-shadow: 0 0 10px 0 #FECDFF;
+    }
+
+    .uno {
+    margin-right: -18px;
+    transform-origin: center left;
+    animation: spin 3s linear infinite;  
+    }
+
+    .dos {
+    transform-origin: center right;
+    animation: spin2 3s linear infinite;
+    animation-delay: .2s;
+    }
+
+    .tres {
+    transform-origin: center right;
+    animation: spin3 3s linear infinite;
+    animation-delay: .3s;
+    }
+
+    .cuatro {
+    transform-origin: center right;
+    animation: spin4 3s linear infinite;
+    animation-delay: .4s;
+    }
+
+    @keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(360deg);
+    }
+    30% {
+        transform: rotate(370deg);
+    }
+    35% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    }
+
+    @keyframes spin2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(-180deg);
+    }
+    35% {
+        transform: rotate(-190deg);
+    }
+    40% {
+        transform: rotate(-180deg);
+    }
+    78% {
+        transform: rotate(-180deg);
+    }
+    95% {
+        transform: rotate(-360deg);
+    }
+    98% {
+        transform: rotate(-370deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+    }
+
+    @keyframes spin3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    27% {
+        transform: rotate(0deg);  
+    }
+    40% {
+        transform: rotate(180deg);
+    }
+    45% {
+        transform: rotate(190deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    62% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(360deg);
+    }
+    80% {
+        transform: rotate(370deg);
+    }
+    85% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    }
+
+    @keyframes spin4 {
+    0% {
+        transform: rotate(0deg);
+    }
+    38% {
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: rotate(-360deg);
+    }
+    65% {
+        transform: rotate(-370deg);
+    }
+    75% {
+        transform: rotate(-360deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+    }
