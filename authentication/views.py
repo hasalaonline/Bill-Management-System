@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .models import WaitingList, ApprovedUser
+from app.models import CEB,NWSDB
 
 from bill_management_system import settings
 # Create your views here.
@@ -18,7 +19,7 @@ def home(request):
         
         messages.success(request, "You have successfully added to the waiting list")
         return redirect('home')
-    return render(request, 'authentication/test.html')
+    return render(request, 'authentication/index.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -42,7 +43,7 @@ def signup(request):
             messages.error(request, "Email already exists")
             return redirect('signup')
         
-        if len(username) > 10:
+        if len(username) > 20:
             messages.error(request, "Username must be under 10 characters")
             return redirect('signup')
         
@@ -60,12 +61,18 @@ def signup(request):
         myuser.last_name = lname
         myuser.save()
 
+        user = CEB(username=username, meter_readings={"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": "0", "7": 0, "8": "0", "9": 0, "10": 0, "11": 0, "12": 0}, units={"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": "0", "7": 0, "8": "0", "9": 0, "10": 0, "11": 0, "12": 0})
+        user.save()
+
+        user = NWSDB(username=username, meter_readings={"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": "0", "7": 0, "8": "0", "9": 0, "10": 0, "11": 0, "12": 0}, units={"1": 0, "2": 0, "3": 0, "4": 0, "5": 0, "6": "0", "7": 0, "8": "0", "9": 0, "10": 0, "11": 0, "12": 0})
+        user.save()
+
         messages.success(request, "Your account has been successfully created. We have sent you an email for verification.")
 
         return redirect('signin')
 
 
-    return render(request, 'authentication/test.html')
+    return render(request, 'authentication/signup.html')
 
 
 def main(request):
@@ -87,9 +94,7 @@ def signin(request):
         else:
             messages.error(request, "Invalid credentials, please try again")
             return redirect('signin')
-
-
-    return render(request, 'authentication/test.html')
+    return render(request, 'authentication/signin.html')
 
 def signout(request):
     logout(request)

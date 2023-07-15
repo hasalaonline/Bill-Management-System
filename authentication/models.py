@@ -10,3 +10,4 @@ class WaitingList(models.Model):
 
 class ApprovedUser(models.Model):
     email = models.EmailField(default='')
+
